@@ -18,5 +18,23 @@ docker inspect -> mostra os detalhes de configuração de um container, utilizam
 docker logs -> apresenta a saída de log de um container, utilizamos o "-f" para 
 manter os logs sendo atualizados na tela
 
-
+##Cria o container docker para o SGDB postgres
 sudo docker run -d --name postgres -h pgsql -p 5432:5432 -e POSTGRES_PASSWORD=senha postgres
+
+##Cria o container docker para o PGadmin 
+sudo docker run -d --name pgadmin -h admin -p 8080:80 -e PGADMIN_DEFAULT_EMAIL=admin@admin.com -e PGADMIN_DEFAULT_PASSWORD=senha dpage/pgadmin4
+
+###Cria o volume aula0806_1, neste caso o volume será criado na pasta padrão do docker que é /var/lib/docker/volumes, mas eu poderia especificar o caminho para o volume
+docker volume create aula0806_1
+
+##Para verificar se o volume foi criado
+docker volume ls
+
+##Para excluir um volume
+docker volume rm aula0806_1
+
+
+## Criando o container do POSTGRES utilizando o volume criado
+sudo docker run -d --name postgres -h pgsql -p 5432:5432 -e POSTGRES_PASSWORD=senha  -v aula0806_1:/var/lib/postgresql/data postgres
+
+

@@ -1,0 +1,22 @@
+Comandos utilizados:
+
+docker login
+docker pull ubuntu:18.04 -> fez o download da imagem docker do ubuntu 18.04 para host
+docker run -d -ti --name ubuntu1804 -h pilla ubuntu:18.04 -> criou o container chamado 
+ubuntu1804 com base no ubuntu 18.04
+docker ps -> verifica quais containers estão em execução;
+docker ps –a -> verifica quais containers já foram executanos na máquina
+docker stop containerName-> parar um container
+dokcer start containerName -> inicia um container
+docker rm containerName -> remove um container parado
+docker images -> lista todas as imagens contidas no host
+docker rmi -> remove a imagem do host
+docker exec -ti ubuntu1804 /bin/bash -> acessa o bash do container 
+docker stats -> mostra os recursos que os containers estão consumindo do host
+docker inspect -> mostra os detalhes de configuração de um container, utilizamos o 
+| less para pausar a tela
+docker logs -> apresenta a saída de log de um container, utilizamos o "-f" para 
+manter os logs sendo atualizados na tela
+
+
+sudo docker run -d --name postgres -h pgsql -p 5432:5432 -e POSTGRES_PASSWORD=senha postgres

@@ -37,4 +37,8 @@ docker volume rm aula0806_1
 ## Criando o container do POSTGRES utilizando o volume criado
 sudo docker run -d --name postgres -h pgsql -p 5432:5432 -e POSTGRES_PASSWORD=senha  -v aula0806_1:/var/lib/postgresql/data postgres
 
+##Criando o container do jenkins
+docker volume create jenkins_vol
+docker run -d --name jenkins -h jenkins -p 8081:8080 -p 50000:50000 -v jenkins_vol:/var/jenkins_home jenkins/jenkins
+
 

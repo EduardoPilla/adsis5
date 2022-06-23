@@ -1,0 +1,8 @@
+1 - Criar o seu Dockerfile
+2 - Fazer o Push da sua imagem para o seu repositório no docker hub
+3 - Criar o container utilizando sua imagem criada
+4 - Entrar dentro do container e validar os arquivos copiados bem como o valor das variaveis de ambiente;
+5 - Parar o container
+6 - verificar se o container está rodando
+7 - verificar os containers que estão parados
+8 - Excluir o container
